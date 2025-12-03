@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Home - MHBTech</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+    
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-top { max-width: 900px; margin: 0 auto; padding: 20px; display: flex; align-items: center; justify-content: space-between; }
+    header h1 { font-size: 28px; }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+    nav a:hover { opacity: 0.8; }
+    
+    .header-search {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 20px 20px;
+      display: flex;
+      gap: 8px;
+      width: 100%;
+    }
+    
+    .header-search input[type="text"] {
+      flex: 1;
+      padding: 10px 14px;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      min-width: 200px;
+    }
+    
+    .header-search input[type="text"]::placeholder { color: #999; }
+    .header-search input[type="text"]:focus {
+      outline: none;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+    }
+    
+    .header-search button {
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    
+    .header-search button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+    
+    main { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    
+    .hero-content {
+      padding: 40px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .hero h2 { font-size: 32px; margin-bottom: 16px; }
+    .hero p { font-size: 16px; margin-bottom: 24px; opacity: 0.95; }
+    
+    .hero-image {
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23764ba2" width="400" height="300"/><circle cx="100" cy="100" r="40" fill="%23667eea"/><circle cx="300" cy="150" r="60" fill="%23667eea" opacity="0.5"/><rect x="50" y="200" width="300" height="80" fill="%23667eea" opacity="0.3" rx="10"/></svg>') center/cover;
+      min-height: 300px;
+    }
+    
+    .features-section {
+      margin-top: 60px;
+      padding: 40px;
+      background: #f8f9fa;
+      border-radius: 12px;
+    }
+    
+    .features-section h2 { font-size: 24px; margin-bottom: 30px; color: #333; text-align: center; }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+    
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .feature-icon {
+      font-size: 24px;
+      min-width: 30px;
+    }
+    
+    .feature-text h3 { font-size: 15px; margin: 0 0 4px 0; color: #667eea; }
+    .feature-text p { font-size: 13px; color: #666; margin: 0; }
+    
+    .features-image {
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400"><rect fill="%23667eea" width="300" height="400"/><rect x="20" y="40" width="260" height="160" fill="%23764ba2" rx="8"/><circle cx="80" cy="120" r="30" fill="%23f0f4ff"/><rect x="150" y="100" width="100" height="60" fill="%23764ba2" opacity="0.5" rx="6"/><rect x="20" y="240" width="260" height="120" fill="%23764ba2" opacity="0.3" rx="8"/></svg>') center/cover;
+      min-height: 350px;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+    }
+    
+    .controls {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    
+    .search {
+      display: flex;
+      gap: 8px;
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    input[type="text"] {
+      flex: 1;
+      padding: 10px 14px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      transition: border-color 0.3s;
+    }
+    
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background: #667eea;
+      color: white;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.2s;
+    }
+    
+    button:hover { background: #764ba2; transform: translateY(-2px); }
+    button:active { transform: translateY(0); }
+    
+    #result {
+      margin-top: 20px;
+      padding: 14px;
+      background: #f0f4ff;
+      border-left: 4px solid #667eea;
+      border-radius: 6px;
+      min-height: 20px;
+    }
+    
+    footer {
+      background: #1a1a2e;
+      border-top: 1px solid #16213e;
+      padding: 40px 20px;
+      margin-top: 60px;
+    }
+    
+    .footer-content { max-width: 900px; margin: 0 auto; text-align: center; }
+    .footer-content p { margin-bottom: 20px; color: #b0b0b0; }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #16213e;
+      border: 2px solid #0f3460;
+      border-radius: 50%;
+      text-decoration: none;
+      color: #667eea;
+      font-size: 18px;
+      transition: all 0.3s;
+    }
+    
+    .social-links a:hover {
+      background: #667eea;
+      color: white;
+      border-color: #667eea;
+      transform: translateY(-3px);
+    }
+    
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-image { min-height: 250px; }
+      .controls { flex-direction: column; }
+      .search { min-width: 100%; }
+      .features-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <h1>MHBTech</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/login">Login</a>
+      </nav>
+    </div>
+    <div class="header-search">
+      <input id="headerSearchInput" type="text" placeholder="Search features, docs, or tutorials...">
+      <button id="headerSearchBtn">Search</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="hero-content">
+        <h2>Welcome to MHBTech</h2>
+        <p>Build modern, fast, and reliable web applications with our intuitive platform and powerful tools.</p>
+        <div>
+          <button id="primaryBtn">Get Started</button>
+        </div>
+      </div>
+      <div class="hero-image"></div>
+    </div>
+
+    <div class="controls">
+      <div class="search">
+        <input id="searchInput" type="text" placeholder="Search features, docs, or tutorials...">
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+
+    <div id="result"></div>
+
+    <section class="features-section">
+      <h2>Why Choose MHBTech?</h2>
+      <div class="features-grid">
+        <div class="features-list">
+          <div class="feature-item">
+            <div class="feature-icon">⚡</div>
+            <div class="feature-text">
+              <h3>Lightning Fast</h3>
+              <p>Optimized performance for speed and efficiency</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🔒</div>
+            <div class="feature-text">
+              <h3>Secure & Reliable</h3>
+              <p>Enterprise-grade security for your peace of mind</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🎨</div>
+            <div class="feature-text">
+              <h3>Beautiful Design</h3>
+              <p>Modern UI/UX for exceptional user experience</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🚀</div>
+            <div class="feature-text">
+              <h3>Easy to Scale</h3>
+              <p>Grow your project without limitations</p>
+            </div>
+          </div>
+        </div>
+        <div class="features-image"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 MHBTech. All rights reserved.</p>
+      <p>Follow us on social media</p>
+      <div class="social-links">
+        <a href="https://facebook.com" title="Facebook" target="_blank">f</a>
+        <a href="https://twitter.com" title="Twitter" target="_blank">𝕏</a>
+        <a href="https://instagram.com" title="Instagram" target="_blank">📷</a>
+        <a href="https://youtube.com" title="YouTube" target="_blank">▶</a>
+        <a href="https://telegram.org" title="Telegram" target="_blank">✈</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header search functionality
+    document.getElementById('headerSearchBtn').addEventListener('click', function () {
+      const q = document.getElementById('headerSearchInput').value.trim();
+      if (!q) {
+        alert('Please enter a search term.');
+        return;
+      }
+      const el = document.getElementById('result');
+      el.textContent = `🔍 Search results for: "${q}" — coming soon!`;
+    });
+
+    document.getElementById('headerSearchInput').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') document.getElementById('headerSearchBtn').click();
+    });
+
+    // Main search functionality
+    document.getElementById('primaryBtn').addEventListener('click', function () {
+      const el = document.getElementById('result');
+      el.textContent = '✓ Great! You\'re ready to get started with MHBTech.';
+    });
+
+    document.getElementById('searchBtn').addEventListener('click', function () {
+      const q = document.getElementById('searchInput').value.trim();
+      const el = document.getElementById('result');
+      if (!q) {
+        el.textContent = '⚠ Please enter a search term.';
+        return;
+      }
+      el.textContent = `🔍 Search results for: "${q}" — coming soon!`;
+    });
+
+    document.getElementById('searchInput').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') document.getElementById('searchBtn').click();
+    });
+  </script>
+</body>
+</html>
+[]
