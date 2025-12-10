@@ -12,6 +12,7 @@
     header {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
+<<<<<<< HEAD
       padding: 20px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
@@ -27,6 +28,28 @@
       transition: opacity 0.3s;
     }
     nav a:hover { opacity: 0.8; }
+=======
+      padding: 16px 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 20px; padding: 0 20px; }
+    header h1 { margin: 0; font-size: 26px; font-weight: 700; }
+
+    nav { display: flex; align-items: center; gap: 20px; flex: 1; justify-content: center; }
+    nav a { color: white; text-decoration: none; font-weight: 600; transition: all 0.25s; padding: 6px 10px; border-radius: 6px; font-size: 14px }
+    nav a:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px) }
+
+    .header-search-right { display:flex; align-items:center; gap:8px; background: rgba(255,255,255,0.10); padding:8px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.12); }
+    .header-search-right input { background:transparent; border:none; color:white; padding:6px 8px; width:200px; transition: width 0.25s ease; font-size:13px }
+    .header-search-right input::placeholder { color: rgba(255,255,255,0.75) }
+    .header-search-right input:focus { outline:none; width:280px }
+    .header-search-right button { background: rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.14); color:white; padding:6px 10px; border-radius:6px; cursor:pointer; font-weight:600 }
+    .header-search-right:hover { background: rgba(255,255,255,0.12) }
+>>>>>>> 9999abc (second commit)
     
     main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
     .container { width:100%; max-width:420px; padding:24px; }
@@ -57,8 +80,85 @@
     .toggle-password input { padding-right:40px }
     .toggle-btn { position:absolute; right:12px; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--muted); cursor:pointer; font-size:18px; transition:color .2s; padding:4px 8px }
     .toggle-btn:hover { color:var(--accent) }
+<<<<<<< HEAD
     footer { margin-top:24px; text-align:center; font-size:12px; color:var(--muted) }
     footer a { color:var(--accent); text-decoration:none }
+=======
+    
+    footer { 
+      background: linear-gradient(180deg, #11111a 0%, #0a0a0f 100%); 
+      color: #cfcfd6; 
+      padding: 48px 0; 
+      margin-top: 40px; 
+      border-top: 1px solid #2a3f5f;
+    }
+    .footer-inner { 
+      max-width: 900px; 
+      margin: 0 auto; 
+      padding: 0 20px; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      text-align: center;
+    }
+    .footer-inner p:first-child { 
+      margin-bottom: 16px; 
+      font-size: 14px; 
+      color: #a0a0a8;
+    }
+    .footer-inner p:last-of-type { 
+      margin-bottom: 20px; 
+      font-size: 13px; 
+      color: #9aa3ff;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .socials { 
+      display: flex; 
+      gap: 12px; 
+      margin-top: 16px; 
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .socials a {
+      display: inline-flex;
+      width: 52px;
+      height: 52px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a1e2e 0%, #16213e 100%);
+      color: #9aa3ff;
+      text-decoration: none;
+      border: 2px solid #2a3f5f;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      font-size: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .socials a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+      border-radius: 50%;
+    }
+    .socials a:hover {
+      color: white;
+      border-color: #667eea;
+      transform: translateY(-6px) scale(1.08);
+      box-shadow: 0 12px 28px rgba(102, 126, 234, 0.35);
+    }
+    .socials a:hover::before {
+      left: 0;
+    }
+    
+>>>>>>> 9999abc (second commit)
     @media (max-width:480px) { .container { padding:16px } .header-section { padding:32px 16px } .form-section { padding:24px 16px } }
   </style>
 </head>
@@ -69,7 +169,17 @@
       <nav>
         <a href="/">Home</a>
         <a href="/about">About</a>
+<<<<<<< HEAD
         <a href="/contact">Contact</a>
+=======
+        <a href="/gallery">Gallery</a>
+        <a href="/department">Department</a>
+        <a href="/contact">Contact</a>
+        <div class="header-search-right">
+          <input id="headerSearchInput" type="text" placeholder="Search...">
+          <button id="headerSearchBtn">🔍</button>
+        </div>
+>>>>>>> 9999abc (second commit)
       </nav>
     </div>
   </header>
@@ -137,6 +247,7 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
 
     <footer>
     <div class="footer-content">
@@ -153,6 +264,39 @@
   </footer>
   </main>
   </div>
+=======
+  </div>
+  </main>
+
+  <script>
+    // Header search handler (small, client-side demo)
+    (function () {
+      const btn = document.getElementById('headerSearchBtn');
+      const input = document.getElementById('headerSearchInput');
+      if (!btn || !input) return;
+      btn.addEventListener('click', function () {
+        const q = input.value.trim();
+        if (!q) { alert('Please enter a search term.'); return; }
+        alert('🔍 Search results for: "' + q + '" — coming soon!');
+      });
+      input.addEventListener('keydown', function (e) { if (e.key === 'Enter') btn.click(); });
+    })();
+  </script>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2025 MHBTech. All rights reserved.</p>
+      <p>Follow us on social media</p>
+      <div class="socials">
+        <a href="https://facebook.com" title="Facebook" target="_blank">f</a>
+        <a href="https://twitter.com" title="Twitter" target="_blank">𝕏</a>
+        <a href="https://instagram.com" title="Instagram" target="_blank">📷</a>
+        <a href="https://telegram.org" title="Telegram" target="_blank">✈</a>
+        <a href="https://youtube.com" title="YouTube" target="_blank">▶</a>
+      </div>
+    </div>
+  </footer>
+>>>>>>> 9999abc (second commit)
 
   <script>
     const form = document.getElementById('loginForm');

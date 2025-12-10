@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Department - MHBTech</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #263238; background: #f6f8fb; }
+
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 16px 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 16px 20px; display:flex; align-items:center; justify-content:center; gap: 20px; }
+    header h1 { font-size: 28px; font-weight: 700; }
+    nav { display:flex; align-items:center; gap: 24px; flex: 1; justify-content: center; }
+    nav a { color: white; text-decoration:none; font-weight:600; transition: all 0.3s; font-size: 14px; padding: 6px 10px; border-radius: 4px; }
+    nav a:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
+    .header-search-right { display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.12); padding: 8px 14px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2); transition: all 0.3s; }
+    .header-search-right:hover { background: rgba(255, 255, 255, 0.18); border-color: rgba(255, 255, 255, 0.4); }
+    .header-search-right input { background: transparent; border: none; color: white; font-size: 13px; padding: 4px 8px; width: 200px; transition: all 0.3s; }
+    .header-search-right input::placeholder { color: rgba(255, 255, 255, 0.7); }
+    .header-search-right input:focus { outline: none; width: 280px; color: white; }
+    .header-search-right button { background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid rgba(255, 255, 255, 0.3); padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 12px; transition: all 0.3s; }
+    .header-search-right button:hover { background: rgba(255, 255, 255, 0.3); transform: scale(1.05); }
+
+    main { max-width: 1000px; margin: 28px auto; padding: 0 20px 60px; }
+
+    .page-title { text-align: center; margin-bottom: 40px }
+    .page-title h2 { color: #1e2a78; font-size: 32px; margin-bottom: 8px }
+    .page-title p { color: #415161; font-size: 16px }
+
+    .departments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .department-card {
+      background: white;
+      border-radius: 10px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(38,50,56,0.06);
+      border-top: 4px solid #667eea;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .department-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(38,50,56,0.12);
+    }
+
+    .dept-icon { font-size: 32px; margin-bottom: 12px }
+
+    .department-card h3 { color: #2b3a67; font-size: 18px; margin-bottom: 10px }
+    .department-card p { color: #556779; font-size: 14px; line-height: 1.6; margin-bottom: 12px }
+
+    .dept-list { list-style: none; margin-top: 12px }
+    .dept-list li { color: #667eea; font-size: 13px; padding: 4px 0; }
+    .dept-list li:before { content: "✓ "; margin-right: 6px; }
+
+    footer {
+      background: linear-gradient(180deg, #11111a 0%, #0a0a0f 100%);
+      color: #cfcfd6;
+      padding: 48px 0;
+      margin-top: 50px;
+      border-top: 1px solid #2a3f5f;
+    }
+    .footer-inner { max-width: 1000px; margin: 0 auto; padding: 0 20px; display: flex; flex-direction: column; align-items: center }
+    .footer-inner p:first-child { margin-bottom: 16px; font-size: 14px; color: #a0a0a8 }
+    .footer-inner p:last-of-type { margin-bottom: 20px; font-size: 13px; color: #9aa3ff; font-weight: 600; letter-spacing: 0.5px }
+    .socials { display: flex; gap: 12px; margin-top: 16px; justify-content: center; flex-wrap: wrap }
+    .socials a { display: inline-flex; width: 52px; height: 52px; align-items: center; justify-content: center; border-radius: 50%; background: linear-gradient(135deg, #1a1e2e 0%, #16213e 100%); color: #9aa3ff; text-decoration: none; border: 2px solid #2a3f5f; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); font-size: 20px; position: relative; overflow: hidden }
+    .socials a::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1); z-index: -1; border-radius: 50% }
+    .socials a:hover { color: white; border-color: #667eea; transform: translateY(-6px) scale(1.08); box-shadow: 0 12px 28px rgba(102, 126, 234, 0.35) }
+    .socials a:hover::before { left: 0 }
+
+    @media (max-width: 768px) {
+      .departments-grid { grid-template-columns: 1fr }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>MHBTech</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/department">Department</a>
+        <a href="/contact">Contact</a>
+        <a href="/login">Login</a>
+        <div class="header-search-right">
+          <input id="headerSearchInput" type="text" placeholder="Search...">
+          <button id="headerSearchBtn">🔍</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-title">
+      <h2>Our Departments</h2>
+      <p>Meet our specialized teams dedicated to excellence</p>
+    </div>
+
+    <div class="departments-grid">
+      <div class="department-card">
+        <div class="dept-icon">💻</div>
+        <h3>Development</h3>
+        <p>Our development team builds robust, scalable applications using modern technologies and best practices.</p>
+        <ul class="dept-list">
+          <li>Full Stack Development</li>
+          <li>Backend Services</li>
+          <li>API Development</li>
+          <li>Database Design</li>
+        </ul>
+      </div>
+
+      <div class="department-card">
+        <div class="dept-icon">🎨</div>
+        <h3>Design</h3>
+        <p>Creative designers craft beautiful, intuitive user interfaces that users love to interact with.</p>
+        <ul class="dept-list">
+          <li>UI/UX Design</li>
+          <li>Web Design</li>
+          <li>Branding</li>
+          <li>Prototyping</li>
+        </ul>
+      </div>
+
+      <div class="department-card">
+        <div class="dept-icon">🔐</div>
+        <h3>Security</h3>
+        <p>Enterprise-grade security solutions protecting your applications and data from threats.</p>
+        <ul class="dept-list">
+          <li>Security Audits</li>
+          <li>Penetration Testing</li>
+          <li>Data Protection</li>
+          <li>Compliance</li>
+        </ul>
+      </div>
+
+      <div class="department-card">
+        <div class="dept-icon">📊</div>
+        <h3>Analytics</h3>
+        <p>Data-driven insights helping you understand user behavior and optimize performance.</p>
+        <ul class="dept-list">
+          <li>Data Analysis</li>
+          <li>Performance Metrics</li>
+          <li>Reporting</li>
+          <li>Optimization</li>
+        </ul>
+      </div>
+
+      <div class="department-card">
+        <div class="dept-icon">🤝</div>
+        <h3>Support</h3>
+        <p>Dedicated support team providing timely assistance and ensuring customer satisfaction.</p>
+        <ul class="dept-list">
+          <li>24/7 Support</li>
+          <li>Technical Help</li>
+          <li>Training</li>
+          <li>Consultation</li>
+        </ul>
+      </div>
+
+      <div class="department-card">
+        <div class="dept-icon">📱</div>
+        <h3>Mobile</h3>
+        <p>Creating exceptional mobile experiences for iOS and Android platforms.</p>
+        <ul class="dept-list">
+          <li>iOS Development</li>
+          <li>Android Development</li>
+          <li>Cross-Platform Apps</li>
+          <li>Mobile Optimization</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('headerSearchBtn').addEventListener('click', function () {
+      const q = document.getElementById('headerSearchInput').value.trim();
+      if (!q) {
+        alert('Please enter a search term.');
+        return;
+      }
+      alert('🔍 Search results for: "' + q + '" — coming soon!');
+    });
+
+    document.getElementById('headerSearchInput').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') document.getElementById('headerSearchBtn').click();
+    });
+  </script>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2025 MHBTech — Follow us on social media</p>
+      <div class="socials">
+        <a href="https://facebook.com" title="Facebook" target="_blank">f</a>
+        <a href="https://instagram.com" title="Instagram" target="_blank">📷</a>
+        <a href="https://twitter.com" title="Twitter" target="_blank">𝕏</a>
+        <a href="https://youtube.com" title="YouTube" target="_blank">▶</a>
+        <a href="https://telegram.org" title="Telegram" target="_blank">✈</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

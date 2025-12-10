@@ -24,6 +24,17 @@ app.get('/login', (req, res) => {
 	res.sendFile(path.join(__dirname, 'pages', 'login.html'));
 });
 
+<<<<<<< HEAD
+=======
+app.get('/gallery', (req, res) => {
+	res.sendFile(path.join(__dirname, 'pages', 'gallery.html'));
+});
+
+app.get('/department', (req, res) => {
+	res.sendFile(path.join(__dirname, 'pages', 'department.html'));
+});
+
+>>>>>>> 9999abc (second commit)
 // 404 for anything else
 app.use((req, res) => {
 	res.status(404).send('Not found');

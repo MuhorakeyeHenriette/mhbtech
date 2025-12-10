@@ -12,18 +12,44 @@
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       padding: 0;
+<<<<<<< HEAD
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+=======
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+>>>>>>> 9999abc (second commit)
       position: sticky;
       top: 0;
       z-index: 100;
     }
     
+<<<<<<< HEAD
     .header-top { max-width: 900px; margin: 0 auto; padding: 20px; display: flex; align-items: center; justify-content: space-between; }
     header h1 { font-size: 28px; }
+=======
+    .header-top { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 16px 20px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
+      gap: 20px;
+    }
+    header h1 { font-size: 28px; font-weight: 700; margin: 0 }
+    
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex: 1;
+      justify-content: center;
+    }
+>>>>>>> 9999abc (second commit)
     
     nav a {
       color: white;
       text-decoration: none;
+<<<<<<< HEAD
       margin-left: 20px;
       font-weight: 500;
       transition: opacity 0.3s;
@@ -71,6 +97,70 @@
     .header-search button:hover {
       background: rgba(255, 255, 255, 0.3);
       border-color: rgba(255, 255, 255, 0.5);
+=======
+      font-weight: 600;
+      transition: all 0.3s;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 4px;
+    }
+    nav a:hover { 
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    .header-search-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s;
+    }
+    
+    .header-search-right:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+    
+    .header-search-right input {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 13px;
+      padding: 4px 8px;
+      width: 200px;
+      transition: all 0.3s;
+    }
+    
+    .header-search-right input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .header-search-right input:focus {
+      outline: none;
+      width: 280px;
+      color: white;
+    }
+    
+    .header-search-right button {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 12px;
+      transition: all 0.3s;
+    }
+    
+    .header-search-right button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+>>>>>>> 9999abc (second commit)
     }
     
     main { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
@@ -258,6 +348,7 @@
       <nav>
         <a href="/">Home</a>
         <a href="/about">About</a>
+<<<<<<< HEAD
         <a href="/contact">Contact</a>
         <a href="/login">Login</a>
       </nav>
@@ -266,6 +357,18 @@
       <input id="headerSearchInput" type="text" placeholder="Search features, docs, or tutorials...">
       <button id="headerSearchBtn">Search</button>
     </div>
+=======
+        <a href="/gallery">Gallery</a>
+        <a href="/department">Department</a>
+        <a href="/contact">Contact</a>
+        <a href="/login">Login</a>
+        <div class="header-search-right">
+          <input id="headerSearchInput" type="text" placeholder="Search...">
+          <button id="headerSearchBtn">🔍</button>
+        </div>
+      </nav>
+    </div>
+>>>>>>> 9999abc (second commit)
   </header>
 
   <main>

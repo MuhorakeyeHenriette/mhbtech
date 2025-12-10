@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Contact - MHBTech</title>
 	<style>
+<<<<<<< HEAD
 		body { font-family: Arial, Helvetica, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; }
 		header { display:flex; align-items:center; justify-content:space-between; }
 		nav a { margin-right: 12px; text-decoration:none; color:#007acc; }
@@ -12,10 +13,148 @@
 		input[type="text"], input[type="email"], textarea { padding:10px; font-size:14px; width:100%; box-sizing:border-box; }
 		button { padding:10px 14px; font-size:14px; cursor:pointer; width:fit-content; }
 		.small { font-size:13px; color:#555 }
+=======
+		* { box-sizing: border-box; margin: 0; padding: 0 }
+		body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #263238; background: #f6f8fb; }
+
+		header {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+			padding: 16px 0;
+			box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+			position: sticky;
+			top: 0;
+			z-index: 100;
+		}
+		.header-inner { max-width: 1200px; margin: 0 auto; padding: 16px 20px; display:flex; align-items:center; justify-content:center; gap: 20px; }
+		header h1 { font-size: 28px; font-weight: 700; }
+		nav { display:flex; align-items:center; gap: 24px; flex: 1; justify-content: center; }
+		nav a { color: white; text-decoration:none; font-weight:600; transition: all 0.3s; font-size: 14px; padding: 6px 10px; border-radius: 4px; }
+		nav a:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
+		.header-search-right { display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.12); padding: 8px 14px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2); transition: all 0.3s; }
+		.header-search-right:hover { background: rgba(255, 255, 255, 0.18); border-color: rgba(255, 255, 255, 0.4); }
+		.header-search-right input { background: transparent; border: none; color: white; font-size: 13px; padding: 4px 8px; width: 200px; transition: all 0.3s; }
+		.header-search-right input::placeholder { color: rgba(255, 255, 255, 0.7); }
+		.header-search-right input:focus { outline: none; width: 280px; color: white; }
+		.header-search-right button { background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid rgba(255, 255, 255, 0.3); padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 12px; transition: all 0.3s; }
+		.header-search-right button:hover { background: rgba(255, 255, 255, 0.3); transform: scale(1.05); }
+
+		main { max-width: 1000px; margin: 40px auto; padding: 0 20px 60px }
+
+		.contact-container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 16px rgba(38,50,56,0.08) }
+		.contact-container h2 { color: #2b3a67; font-size: 28px; margin-bottom: 12px }
+		.contact-container .subtitle { color: #556779; font-size: 15px; margin-bottom: 28px }
+
+		form { display: flex; flex-direction: column; gap: 18px }
+		.form-group { display: flex; flex-direction: column; gap: 6px }
+		label { font-size: 14px; color: #333; font-weight: 600 }
+		input[type="text"], input[type="email"], textarea {
+			padding: 12px 14px;
+			font-size: 14px;
+			border: 1px solid #ddd;
+			border-radius: 6px;
+			font-family: inherit;
+			transition: all 0.3s;
+		}
+		input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+			outline: none;
+			border-color: #667eea;
+			box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+		}
+		textarea { resize: vertical; min-height: 140px }
+
+		.button-group { display: flex; gap: 12px; margin-top: 8px }
+		button {
+			padding: 12px 18px;
+			font-size: 14px;
+			font-weight: 600;
+			cursor: pointer;
+			border: none;
+			border-radius: 6px;
+			transition: all 0.3s;
+		}
+		button[type="submit"] {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+		}
+		button[type="submit"]:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) }
+		button[type="button"] {
+			background: #f0f0f0;
+			color: #333;
+		}
+		button[type="button"]:hover { background: #e0e0e0 }
+
+		#formResult {
+			margin-top: 16px;
+			padding: 14px;
+			border-radius: 6px;
+			display: none;
+		}
+		#formResult.show { display: block }
+		#formResult.success { background: #e8f5e9; color: #2e7d32; border-left: 4px solid #4caf50 }
+		#formResult.error { background: #ffebee; color: #c62828; border-left: 4px solid #f44336 }
+
+		footer {
+			background: linear-gradient(180deg, #11111a 0%, #0a0a0f 100%);
+			color: #cfcfd6;
+			padding: 48px 0;
+			margin-top: 50px;
+			border-top: 1px solid #2a3f5f;
+		}
+		.footer-inner { max-width: 1000px; margin: 0 auto; padding: 0 20px; display: flex; flex-direction: column; align-items: center }
+		.footer-inner p:first-child { margin-bottom: 16px; font-size: 14px; color: #a0a0a8 }
+		.footer-inner p:last-of-type { margin-bottom: 20px; font-size: 13px; color: #9aa3ff; font-weight: 600; letter-spacing: 0.5px }
+		.socials { display: flex; gap: 12px; margin-top: 16px; justify-content: center; flex-wrap: wrap }
+		.socials a {
+			display: inline-flex;
+			width: 52px;
+			height: 52px;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			background: linear-gradient(135deg, #1a1e2e 0%, #16213e 100%);
+			color: #9aa3ff;
+			text-decoration: none;
+			border: 2px solid #2a3f5f;
+			transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+			font-size: 20px;
+			position: relative;
+			overflow: hidden;
+		}
+		.socials a::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+			z-index: -1;
+			border-radius: 50%;
+		}
+		.socials a:hover {
+			color: white;
+			border-color: #667eea;
+			transform: translateY(-6px) scale(1.08);
+			box-shadow: 0 12px 28px rgba(102, 126, 234, 0.35);
+		}
+		.socials a:hover::before {
+			left: 0;
+		}
+
+		@media (max-width: 768px) {
+			.contact-container { padding: 24px }
+			.contact-container h2 { font-size: 24px }
+			.button-group { flex-direction: column }
+			button { width: 100% }
+		}
+>>>>>>> 9999abc (second commit)
 	</style>
 </head>
 <body>
 	<header>
+<<<<<<< HEAD
 		<h1>Contact</h1>
 		<nav>
 			<a href="/">Home</a>
@@ -51,6 +190,90 @@
 		<div id="formResult" style="margin-top:16px;color:#222"></div>
 	</main>
 
+=======
+		<div class="header-inner">
+			<h1>MHBTech</h1>
+			<nav>
+				<a href="/">Home</a>
+				<a href="/about">About</a>
+				<a href="/gallery">Gallery</a>
+				<a href="/department">Department</a>
+				<a href="/contact">Contact</a>
+				<a href="/login">Login</a>
+				<div class="header-search-right">
+					<input id="headerSearchInput" type="text" placeholder="Search...">
+					<button id="headerSearchBtn">🔍</button>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<div class="contact-container">
+			<h2>📬 Get in Touch</h2>
+			<p class="subtitle">Have a question or want to work with us? Send us a message and we'll get back to you soon.</p>
+
+			<form id="contactForm">
+				<div class="form-group">
+					<label for="name">Full Name</label>
+					<input id="name" type="text" name="name" placeholder="Your name" required>
+				</div>
+
+				<div class="form-group">
+					<label for="email">Email Address</label>
+					<input id="email" type="email" name="email" placeholder="you@example.com" required>
+				</div>
+
+				<div class="form-group">
+					<label for="subject">Subject</label>
+					<input id="subject" type="text" name="subject" placeholder="How can we help?" required>
+				</div>
+
+				<div class="form-group">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" placeholder="Tell us more about your inquiry..." required></textarea>
+				</div>
+
+				<div class="button-group">
+					<button type="submit">Send Message</button>
+					<button type="button" id="clearBtn">Clear Form</button>
+				</div>
+			</form>
+
+			<div id="formResult"></div>
+		</div>
+	</main>
+
+	<footer>
+		<div class="footer-inner">
+			<p>&copy; 2025 MHBTech. All rights reserved.</p>
+			<p>Follow us on social media</p>
+			<div class="socials">
+				<a href="https://instagram.com" title="Instagram" target="_blank">📷</a>
+				<a href="https://twitter.com" title="Twitter" target="_blank">𝕏</a>
+				<a href="https://facebook.com" title="Facebook" target="_blank">f</a>
+				<a href="https://telegram.org" title="Telegram" target="_blank">✈</a>
+				<a href="https://youtube.com" title="YouTube" target="_blank">▶</a>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		document.getElementById('headerSearchBtn').addEventListener('click', function () {
+			const q = document.getElementById('headerSearchInput').value.trim();
+			if (!q) {
+				alert('Please enter a search term.');
+				return;
+			}
+			alert('🔍 Search results for: "' + q + '" — coming soon!');
+		});
+
+		document.getElementById('headerSearchInput').addEventListener('keydown', function (e) {
+			if (e.key === 'Enter') document.getElementById('headerSearchBtn').click();
+		});
+	</script>
+
+>>>>>>> 9999abc (second commit)
 	<script>
 		const form = document.getElementById('contactForm');
 		const result = document.getElementById('formResult');
@@ -59,6 +282,7 @@
 			e.preventDefault();
 			const name = document.getElementById('name').value.trim();
 			const email = document.getElementById('email').value.trim();
+<<<<<<< HEAD
 			const message = document.getElementById('message').value.trim();
 
 			if (!name || !email || !message) {
@@ -68,14 +292,43 @@
 
 			// Simulate sending — in a real app, submit via fetch() to a backend endpoint
 			result.textContent = `Thank you, ${name}! Your message has been received.`;
+=======
+			const subject = document.getElementById('subject').value.trim();
+			const message = document.getElementById('message').value.trim();
+
+			result.className = '';
+
+			if (!name || !email || !subject || !message) {
+				result.textContent = '⚠ Please fill out all fields.';
+				result.className = 'show error';
+				return;
+			}
+
+			if (!email.includes('@')) {
+				result.textContent = '⚠ Please enter a valid email address.';
+				result.className = 'show error';
+				return;
+			}
+
+			result.textContent = `✓ Thank you, ${name}! Your message has been sent successfully. We'll get back to you soon.`;
+			result.className = 'show success';
+>>>>>>> 9999abc (second commit)
 			form.reset();
 		});
 
 		document.getElementById('clearBtn').addEventListener('click', () => {
 			form.reset();
+<<<<<<< HEAD
 			result.textContent = '';
 		});
 	</script>
 	
+=======
+			result.className = '';
+			result.textContent = '';
+		});
+	</script>
+
+>>>>>>> 9999abc (second commit)
 </body>
 </html>
